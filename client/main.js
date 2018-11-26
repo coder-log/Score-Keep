@@ -2,10 +2,11 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import {Meteor} from 'meteor/meteor';
 import {Players} from './../imports/api/players';
+import {Tracker} from 'meteor/tracker';
 
-setTimeout( function() {
+Tracker.autorun( function() {
 console.log('Players List', Players.find().fetch());
-}, 1000);
+});
 
 const players = [
   {
