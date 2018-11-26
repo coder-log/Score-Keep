@@ -34,6 +34,11 @@ const renderPlayers = function (playersList) {
 };
 
 Meteor.startup(function (){
+
+  //Call tracker.autorun
+  // Create a variable called players -> set equal to fetch query
+  // Render players variable to the screen
+  
   //title -> Account Settings
   let name= 'Coderlog';
   let title='Score Keep';
