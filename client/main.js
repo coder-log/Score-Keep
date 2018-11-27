@@ -12,6 +12,16 @@ const renderPlayers = function (playersList) {
   });
 };
 
+const handleSubmit = function(e) {
+  let playerName = e.target.playerName.value;
+  e.preventDefault();
+  if(playerName) {
+   e.target.playerName.value='';
+    //insert players
+  }
+
+};
+
 Meteor.startup(function (){
   // STEP 1. INCLUDE
   //Call tracker.autorun
@@ -28,6 +38,10 @@ Meteor.startup(function (){
     <p>Hello!</p>
     {/*Render players to the screen*/}
     {renderPlayers(players)}
+    <form onSubmit = {handleSubmit}>
+      <input type="text" name = "playerName" placeholder ="Player Name" />
+      <button>Add Player</button>
+    </form>
   </div>
   );
   ReactDOM.render((jsx), document.getElementById('app'));
