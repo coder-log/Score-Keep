@@ -18,6 +18,13 @@ const handleSubmit = function(e) {
   if(playerName) {
    e.target.playerName.value='';
     //insert players
+    // Insert new document into players collection
+    Players.insert({
+      name: playerName,
+      score: 0
+  });
+
+  console.log(Players.find().fetch());
   }
 
 };
@@ -47,14 +54,4 @@ Meteor.startup(function (){
   ReactDOM.render((jsx), document.getElementById('app'));
 
   });
-
-  // Insert new document into players collection
-
-  Players.insert({
-    name: 'John',
-    score: 13
-  });
-
-  console.log(Players.find().fetch());
-  
 });
