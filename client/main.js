@@ -8,7 +8,19 @@ import {Tracker} from 'meteor/tracker';
 const renderPlayers = (playersList) => {
 
   return playersList.map((player) => {
-    return <p key={player._id}> {player.name} has {player.score} points </p>;
+    return (
+       <p key={player._id}> 
+       {player.name} has {player.score} points
+       <button onClick ={()=>{
+          Players.update({_id: player._id}, {$inc: {score:1}})
+       }}>+1</button>
+       <button onClick ={()=>{
+         Players.remove({_id:player._id});
+         alert('deleted');
+
+        }}>X</button>
+       </p>
+    );
   });
 };
 
