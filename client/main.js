@@ -44,6 +44,17 @@ const handleSubmit = (e) => {
 
 };
 
+//FIRST REACT COMPONENT
+class TitleBar extends React.Component{
+  render(){
+    return (
+      <div>
+        <h1>My App Name</h1>
+      </div>
+    );
+  }
+}
+
 Meteor.startup( () => {
   // STEP 1. INCLUDE
   //Call tracker.autorun
@@ -55,9 +66,7 @@ Meteor.startup( () => {
   let title='Score Keep';
   let jsx = (
   <div>
-    {/* Render h1 tag with title var as text */}
-    <h1> {title} </h1>
-    <p>Hello!</p>
+    <TitleBar />
     {/*Render players to the screen*/}
     {renderPlayers(players)}
     <form onSubmit = {handleSubmit}>
