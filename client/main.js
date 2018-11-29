@@ -3,6 +3,8 @@ import ReactDOM from 'react-dom';
 import {Meteor} from 'meteor/meteor';
 import {Players} from './../imports/api/players';
 import {Tracker} from 'meteor/tracker';
+import TitleBar from './../imports/ui/TitleBar';
+import AddPlayer from './../imports/ui/AddPlayer';
 
 
 const renderPlayers = (playersList) => {
@@ -44,16 +46,7 @@ const handleSubmit = (e) => {
 
 };
 
-//FIRST REACT COMPONENT
-class TitleBar extends React.Component{
-  render(){
-    return (
-      <div>
-        <h1>My App Name</h1>
-      </div>
-    );
-  }
-}
+
 
 Meteor.startup( () => {
   // STEP 1. INCLUDE
@@ -69,6 +62,8 @@ Meteor.startup( () => {
     <TitleBar />
     {/*Render players to the screen*/}
     {renderPlayers(players)}
+    {/*Render AddPlayer below here*/}
+    <AddPlayer />
     <form onSubmit = {handleSubmit}>
       <input type="text" name = "playerName" placeholder ="Player Name" />
       <button>Add Player</button>
