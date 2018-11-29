@@ -49,26 +49,21 @@ const handleSubmit = (e) => {
 
 
 Meteor.startup( () => {
-  // STEP 1. INCLUDE
-  //Call tracker.autorun
   Tracker.autorun( () => {
-
-    //title -> Account Settings
-    // Create a variable called players -> set equal to fetch query
-  const players = Players.find().fetch();
-  let title='Score Keep';
-  let jsx = (
-  <div>
-    <TitleBar />
-    {/*Render players to the screen*/}
-    {renderPlayers(players)}
-    {/*Render AddPlayer below here*/}
-    <AddPlayer />
-    <form onSubmit = {handleSubmit}>
-      <input type="text" name = "playerName" placeholder ="Player Name" />
-      <button>Add Player</button>
-    </form>
-  </div>
+    const players = Players.find().fetch();
+    let title='Score Keep';
+    let jsx = (
+    <div>
+      <TitleBar />
+      {/*Render players to the screen*/}
+      {renderPlayers(players)}
+      {/*Render AddPlayer below here*/}
+      <AddPlayer />
+      <form onSubmit = {handleSubmit}>
+        <input type="text" name = "playerName" placeholder ="Player Name" />
+        <button>Add Player</button>
+      </form>
+    </div>
   );
   ReactDOM.render((jsx), document.getElementById('app'));
 
