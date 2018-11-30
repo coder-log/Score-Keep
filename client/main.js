@@ -29,25 +29,6 @@ const renderPlayers = (playersList) => {
   });
 };
 
-const handleSubmit = (e) => {
-  let playerName = e.target.playerName.value;
-  e.preventDefault();
-  if(playerName) {
-   e.target.playerName.value='';
-    //insert players
-    // Insert new document into players collection
-    Players.insert({
-      name: playerName,
-      score: 0
-  });
-
-  console.log(Players.find().fetch());
-  }
-
-};
-
-
-
 Meteor.startup( () => {
   Tracker.autorun( () => {
     const players = Players.find().fetch();
@@ -59,10 +40,7 @@ Meteor.startup( () => {
       {renderPlayers(players)}
       {/*Render AddPlayer below here*/}
       <AddPlayer />
-      <form onSubmit = {handleSubmit}>
-        <input type="text" name = "playerName" placeholder ="Player Name" />
-        <button>Add Player</button>
-      </form>
+      
     </div>
   );
   ReactDOM.render((jsx), document.getElementById('app'));
