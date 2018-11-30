@@ -26,7 +26,7 @@ export default class AddPlayer extends React.Component {
           // Insert new document into players collection
           Players.insert({
             name: playerName,
-            score: 0;
+            score: 0
         });
         console.log(Players.find().fetch());
         }
