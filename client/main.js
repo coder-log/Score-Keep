@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom';
 import {Meteor} from 'meteor/meteor';
 import {Players} from './../imports/api/players';
 import {Tracker} from 'meteor/tracker';
+import App from './../imports/ui/App';
 import TitleBar from './../imports/ui/TitleBar';
 import AddPlayer from './../imports/ui/AddPlayer';
 import PlayerList from './../imports/ui/PlayerList';
@@ -23,7 +24,7 @@ Meteor.startup( () => {
       
     </div>
   );
-  ReactDOM.render((jsx), document.getElementById('app'));
+  ReactDOM.render(<App />, document.getElementById('app'));
 
   });
 });
