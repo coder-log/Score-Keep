@@ -10,9 +10,14 @@ import Player from './Player';
 
 export default class PlayerList extends React.Component {
     renderPlayers() {
+        if(this.props.players.length === 0) {
+            //JSX to show a message "add your first player"
+            return <p>Add your first player</p>
+        } else {
         return this.props.players.map((player) => {
             return <Player key={player._id} player={player} />;
         });
+        }   
     }
     render() {
         return(
