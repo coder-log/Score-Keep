@@ -1,0 +1,30 @@
+*{
+    margin: 0;
+    padding: 0;
+  }
+  
+  html{
+    font-size: 62.5%; // 16px * 0.625 = 10px this allow us to calculate easily rem units in css
+  
+  }
+  body {
+    color:#555555;
+    font-family: Helvetica, Arial, sans-serif;
+    
+  }
+  
+  h1 {
+    font-weight: 300;
+    font-size: 2.4rem; //root  is 10 px, 2.4rem is then 24px.
+  }
+  
+  .wrapper {
+    margin: 0 auto;
+    max-width: 50rem;
+    padding: 1.3rem;
+  }
+
+  @import './components/title-bar';
+
+  
+  
