@@ -5,8 +5,10 @@ import PropTypes from 'prop-types';
 export default class Player extends React.Component{
     render() {
         return (
-        <p key={this.props.player._id}> 
+        <div key={this.props.player._id} className="item">
+            <p> 
             {this.props.player.name} has {this.props.player.score} points
+            </p>
             <button onClick ={()=>{
                 Players.update({_id: this.props.player._id}, {$inc: {score:1}})
             }}>+1</button>
@@ -17,7 +19,7 @@ export default class Player extends React.Component{
                 Players.remove({_id:this.props.player._id});
                 alert('deleted');
             }}>X</button>
-        </p>
+        </div>
     
         );
     }
