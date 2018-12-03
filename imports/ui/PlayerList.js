@@ -1,12 +1,6 @@
 import React from 'react';
-import Player from './Player'; 
-
-// const renderPlayers = (playersList) => {
-//     return playersList.map((player) => {
-//       return <Player key={player._id} player={player} />;
-      
-//     });
-//   };
+import Player from './Player';
+import FlipMove from 'react-flip-move';
 
 export default class PlayerList extends React.Component {
     renderPlayers() {
@@ -23,8 +17,11 @@ export default class PlayerList extends React.Component {
     }
     render() {
         return(
+            
             <div>
-                {this.renderPlayers()}
+                <FlipMove>
+                    {this.renderPlayers()}
+                </FlipMove>
             </div>
         );
     }
