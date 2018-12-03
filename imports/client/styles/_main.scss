@@ -20,11 +20,17 @@
     font-size: 2.4rem; //root  is 10 px, 2.4rem is then 24px.
   }
 
+  input, button, select {
+      font-size: 1.3rem;
+  }
+
 
   @import './components/title-bar';
   @import './components/wrapper';
   @import './components/item';
   @import './components/buttons';
+  @import './components/form';
+  @import './components/player';
 
   
   
