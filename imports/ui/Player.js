@@ -8,7 +8,7 @@ export default class Player extends React.Component{
         <div key={this.props.player._id} className="item">
             <div className="player">
                 <div>
-                    <h3 classNAme="player__name">{this.props.player.name}</h3>
+                    <h3 className="player__name">{this.props.player.name}</h3>
                     <p className ="player__stats"> 
                     {this.props.player.score} point(s).
                 </p>
