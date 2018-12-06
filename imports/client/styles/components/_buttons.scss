@@ -1,17 +1,19 @@
 button {
     border: 1px solid #555555;
     color: #555555;
+    background: transparent;
     cursor: pointer;
     font-weight: 600;
     line-height: 1;
     margin-left: 1.3rem;
-    outline: none;
+    outline: none !important;
     padding: 1.3rem;
     transition: background .2s ease, transform .2s ease;
+    
 
     &:hover, &:focus {
         background: #e8e8e8;
-
+        outline: none !important;
     }
 
     &:active {
